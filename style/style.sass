@@ -1,0 +1,1006 @@
+//vars
+$black: rgb(14, 14, 14)
+$white: rgb(250, 250, 250)
+$accent: rgb(113, 141, 84)
+$bronze: rgb(168, 124, 87)
+$silver: rgb(168, 168, 168)
+$gold: rgb(236, 174, 81)
+$platinum: rgb(132, 198, 224)
+$warning: rgb(247, 96, 96)
+$success: rgb(96, 153, 84)
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')
+
+@keyframes loadingScreen
+    0%
+        opacity: 1
+
+    95%
+        opacity: 0
+
+    100%
+        top: -200rem
+
+@media screen and (max-width: 430px)
+    h2
+        font-size: 13pt
+
+    .user
+        opacity: 0 !important
+        display: none !important
+
+    .banner
+        height: 200px !important
+
+    main:has(.sidebar)
+        display: flex !important
+        flex-direction: column-reverse !important
+        gap: 75px !important
+
+    .container
+        background-color: $white
+        z-index: 10000
+        display: flex
+        position: fixed
+        top: 0
+        left: -700px
+        width: 100vw
+        height: 100vh
+        .sidebar
+            height: 100%
+            width: 100%
+            justify-content: center
+            button
+                padding: 15px 25px !important
+
+    .userpage-main, .userpage-heading
+        padding: 0px !important
+        transform: translateY(140px) !important
+
+    .userpage-heading__name
+        flex-direction: column !important
+        width: 100%
+        gap: 5px
+
+    .userpage-heading__name .text
+        padding: 0px !important
+        transform: translateX(0px) !important
+        gap: 0px !important
+
+    .text-name
+        font-size: 20pt !important
+
+    .level-status
+        font-size: 34pt !important
+
+    .recentfav
+        display: flex !important
+        flex-direction: column
+
+    .wrap
+        margin: 30px 30px
+
+    button, form a
+        padding: 30px
+
+    nav>ul>li, .cart, .profile
+        display: none
+
+    .bx-menu-alt-right
+        cursor: pointer
+        display: block
+        font-size: 26pt
+
+    .ad
+        p
+            font-size: small
+
+    .productlist
+        grid-template-columns: repeat(auto-fit, 1fr)
+        gap: 35px
+
+    .product
+        flex-direction: column
+        gap: 50px
+        &-buy
+            gap: 30px
+        &-image
+            display: flex
+            flex-direction: column
+            position: relative
+            gap: 10px
+            &__item
+                width: 100%
+                height: 315px
+            &__gallery
+                .preview
+                    width: 100%
+                    height: 58px
+
+    .similar
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        gap: 25px
+        h3
+            grid-column: 1 / 3
+            margin-bottom: 10px
+        &-item
+            height: 145px
+            i
+                transform: scale(0.9)
+                top: 10px
+                right: 10px
+
+@media screen and (min-width: 431px)
+    .user
+        opacity: 0 !important
+        display: none !important
+
+    .wrap
+        margin: 35px 80px
+
+    nav>ul>li, .cart, .profile
+        display: none
+
+    .bx-menu-alt-right
+        cursor: pointer
+        display: block
+        font-size: 26pt
+
+    button, form a
+        padding: 30px
+
+    .productlist
+        grid-template-columns: repeat(auto-fit, 1fr)
+        gap: 45px
+        h2
+            grid-column: 1 / 3
+
+    .product
+        flex-direction: column
+        gap: 50px
+        &-buy
+            gap: 30px
+        &-info
+            width: 100%
+        &-image
+            display: flex
+            flex-direction: row-reverse
+            position: relative
+            gap: 10px
+            &__item
+                width: 100%
+                height: 400px
+            &__gallery
+                flex-direction: column
+                .preview
+                    width: 72px
+                    height: 72px
+
+    .similar
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 25px
+        h3
+            grid-column: 1 / 4
+            margin-bottom: 10px
+        &-item
+            height: 190px
+            i
+                transform: scale(0.9)
+                top: 10px
+                right: 10px
+
+@media screen and (min-width: 1099px)
+    .user
+        opacity: 1 !important
+        display: flex !important
+
+    .wrap
+        margin: 35px 125px
+
+    button, form a
+        padding: 30px
+
+    nav>ul>li, .cart, .profile
+        display: block
+
+    .bx-menu-alt-right
+        display: none !important
+
+    .productlist
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: repeat(auto-fit, 350px)
+        h2
+            grid-column: 1 / 4
+
+    .product
+        flex-direction: row
+        &-info
+            width: 40% !important
+        &-image
+            display: flex
+            flex-direction: column
+            position: relative
+            gap: 10px
+            &__item
+                min-width: 350px
+                height: 350px
+            &__gallery
+                flex-direction: row
+                .preview
+                    min-width: 47px
+                    height: 60px
+
+    .similar
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        gap: 25px
+        h3
+            grid-column: 1 / 5
+            margin-bottom: 10px
+        &-item
+            height: 200px
+
+@media screen and (min-width: 1617px)
+    .wrap
+        margin: 35px 250px
+
+    button, form a
+        padding: 20px 30px
+
+    .product
+        flex-direction: row
+        &-info
+            width: 30% !important
+        &-buy
+            &__cta
+                div
+                    flex-direction: row !important
+        &-image
+            display: flex
+            flex-direction: row-reverse
+            position: relative
+            gap: 10px
+            &__item
+                width: 400px
+                height: 400px
+            &__gallery
+                flex-direction: column
+                .preview
+                    width: 72px
+                    height: 72px
+
+    .productlist
+        grid-template-columns: repeat(3, 1fr)
+        h2
+            grid-column: 1 / 4
+
+    .similar
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        gap: 25px
+        h3
+            grid-column: 1 / 6
+            margin-bottom: 10px
+        &-item
+            height: 265px
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    background-color: $white
+    color: $black
+    font-family: 'Montserrat', sans-serif
+
+a
+    text-decoration: none
+    color: $black
+
+//reusable
+
+.modal
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 5000
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background: rgba(0, 0, 0, .5)
+    &-body
+        display: flex
+        flex-direction: column
+        gap: 25px
+        align-items: center
+        padding: 50px
+        background-color: $white
+        border-radius: 10px
+        form
+            display: flex
+            gap: 15px
+
+input
+    font-family: 'Montserrat', sans-serif !important
+
+.price-range-block
+    width: 100%
+    div:has(input)
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 15px
+
+.ui-widget.ui-widget-content
+    width: 100%
+
+.ui-slider-horizontal
+    height: .6em
+    &
+        margin-top: 10px
+        width: 40%
+
+.ui-widget-header
+    background-color: rgba(0, 0, 0, .05) !important
+
+.ui-state-default, .ui-widget-content .ui-state-default
+    background-color: $accent !important
+    border: none !important
+
+.price-range-search
+    width: 40.5%
+    background-color: #f9f9f9
+    border: 1px solid #6e6666
+    min-width: 40%
+    display: inline-block
+    height: 32px
+    border-radius: 5px
+    float: left
+    margin-bottom: 20px
+    font-size: 16px
+
+.price-range-field
+    width: 100%
+    background-color: #f9f9f9
+    border: 1px solid #6e6666
+    color: black
+    font-family: myFont
+    font: normal 14px Arial, Helvetica, sans-serif
+    border-radius: 5px
+    padding: 15px 20px
+
+.search-results-block
+    position: relative
+    display: block
+    clear: both
+
+label:has(.checkmark)
+    position: relative
+    display: flex
+    align-items: center
+    gap: 10px
+    padding: 10px 0
+    padding-left: 25px
+    cursor: pointer
+    &:hover input[type=checkbox] ~ .checkmark
+        background-color: #ccc
+    .checkmark
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        width: 20px
+        height: 20px
+        border-radius: 3px
+        left: 0
+        background-color: rgba(0,0,0,.075)
+        transition: .1s
+        i
+            color: $white
+            opacity: 0
+            transition: .1s
+    input[type=checkbox]
+        height: 0
+        width: 0
+        &:checked ~ .checkmark
+            background-color: $accent
+            i
+                opacity: 1
+
+button.unread
+    position: relative
+    &:after
+        content: ''
+        position: absolute
+        width: 10px
+        height: 10px
+        background-color: $warning
+        right: 15px
+        top: 40%
+        border-radius: 50%
+
+.banner
+    background-size: cover
+    background-position: center
+    z-index: -10
+    width: 100%
+    height: 250px
+    position: absolute
+    top: 0
+    left: 0
+    border-radius: 10px 10px 0 0
+    opacity: .85
+
+input
+    font-family: 'Montserrat', sans-serif
+    border-radius: 5px
+    padding: 12px 20px
+    border: none
+    background-color: rgba(0, 0, 0, .05)
+
+main
+    display: flex
+    flex-direction: column
+
+main:has(.sidebar)
+    display: grid
+    grid-template-columns: 350px 1fr
+    gap: 75px
+
+.container
+    .sidebar
+        padding: 25px
+        list-style: none
+        display: flex
+        flex-direction: column
+        gap: 10px
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15)
+        border-radius: 10px
+        details
+            ul
+                display: flex
+                flex-direction: column
+                gap: 10px
+                list-style: none
+            summary
+                cursor: pointer
+                list-style: none
+
+        button, a
+            display: flex
+            gap: 10px
+            align-items: center
+            width: 100%
+            text-align: left
+            color: $black
+            font-size: 12pt
+            font-weight: 600
+            padding: 10px 20px
+            border-radius: 5px
+            background-color: transparent
+            &:hover
+                background-color: rgba(0,0,0,.05)
+                transform: scale(1)
+            &.active
+                pointer-events: none
+                background-color: $black
+                color: $white
+
+h2, h3
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 10px
+    font-size: 14pt
+    margin-bottom: 10px
+    .link
+        font-size: 12pt
+        font-weight: 400
+
+button
+    border: none
+    background-color: none
+    font-family: 'Montserrat', sans-serif
+    font-size: 14pt
+    font-weight: 600
+    border-radius: 10px
+    cursor: pointer
+    color: $white
+    transition: .2s
+    &:hover
+        transform: scale(1.035)
+    &.primary
+        background-color: $accent
+    &.secondary
+        background-color: $white
+        border: 2px solid $accent
+        color: $accent
+
+.line
+    background-image: linear-gradient(to right, #000 10%, rgba(255, 255, 255, 0) 0%)
+    background-position: 0 14px
+    background-size: 10px 1px
+    background-repeat: repeat-x
+    width: 100%
+    height: 25px
+
+form:has(.bx-bookmark)
+    cursor: pointer
+    position: absolute
+    right: 20px
+    top: 20px
+    button
+        padding: 0
+        background: none
+    .bx-bookmark
+        padding: 12px
+        font-size: 12pt
+        background-color: rgba(255, 255, 255, 0.9)
+        border-radius: 6px
+        color: $black
+        &:hover
+            color: $white
+            background-color: $black
+
+.logo
+    display: flex
+    align-items: center
+    gap: 10px
+    font-weight: 700
+    i
+        font-size: 26pt
+
+hr
+    border-top: 1px solid #e0e0e0
+    border-left: none
+    border-bottom: none
+    border-right: none
+    margin: 10px 0px
+
+.hover-scaleup
+    transition: .2s
+    &:hover
+        transform: scale(102%)
+
+.price
+    display: flex
+    align-items: center
+    gap: 25px
+    font-size: 28pt
+    font-weight: 700
+    &-old
+        text-decoration: line-through
+        font-size: 12pt
+        opacity: .5
+        font-weight: 700
+
+.rating
+    width: 100%
+    display: flex
+    gap: 15px
+    align-items: center
+    p:has(i)
+        i
+            font-size: 10pt
+            color: rgb(234, 147, 16)
+            a
+                text-decoration: underline
+
+.loading
+    transform: translateY(-35px)
+    display: none
+    z-index: 100000
+    position: fixed
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100vw
+    height: 110vh
+    background-color: $white
+    animation: loadingScreen .8s ease .5s forwards
+    img
+        width: 75px
+
+//header
+
+header
+    margin-bottom: 75px !important
+    nav
+        display: flex
+        justify-content: space-between
+        align-items: center
+        .user
+            display: flex
+            align-items: center
+            gap: 25px
+            i
+                font-size: 18pt
+            a:nth-child(1)
+                i
+                    font-size: 17pt
+        ul
+            display: flex
+            gap: 45px
+            list-style: none
+
+.ad
+    cursor: pointer
+    display: flex
+    align-items: flex-end
+    height: 325px
+    padding: 50px
+    border-radius: 10px
+    background-image: url(https://i.ibb.co/2SrySM7/michael-demoya-nrleaa-HWOUw-unsplash.jpg)
+    background-position-y: -600px
+    filter: grayscale(1)
+    p
+        color: $white
+        font-size: 22pt
+        letter-spacing: 2px
+        width: 45%
+        filter: drop-shadow(-1px 3px 1px black)
+        span
+            font-style: italic
+            font-weight: bold
+            font-size: 58pt
+            margin-left: -10px
+            letter-spacing: 10px
+
+.product
+    display: flex
+    justify-content: space-between
+    &-image
+        display: flex
+        position: relative
+        gap: 10px
+        &__item
+            border-radius: 10px
+            cursor: pointer
+            background-size: cover
+            background-position: center
+        &__gallery
+            display: flex
+            gap: 10px
+            .preview
+                border-radius: 10px
+                background-size: cover
+                background-position: center
+                cursor: pointer
+    &-info
+        display: flex
+        flex-direction: column
+        gap: 35px
+        &__title
+            display: flex
+            flex-direction: column
+            gap: 10px
+            h1
+                font-size: 18pt
+        .desc
+            ul
+                display: flex
+                flex-direction: column
+                gap: 15px
+                li
+                    display: flex
+                    justify-content: space-between
+                    p
+                        font-size: smaller
+                        text-align: left
+                        background-color: $white
+                        &:nth-child(1)
+                            padding-right: 10px
+                            font-weight: 600
+                        &:nth-child(2)
+                            padding-left: 10px
+                            width: 90px
+    &-buy
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        &__cta
+            display: flex
+            flex-direction: column
+            gap: 25px
+            div
+                display: flex
+                flex-direction: column
+                gap: 12px
+        &__shop
+            display: flex
+            align-items: center
+            gap: 15px
+            cursor: pointer
+            .bxs-store-alt
+                font-size: 18pt
+                padding: 10px
+                border-radius: 5px
+                background-color: rgba(0, 0, 0, .1)
+            .shop
+                display: flex
+                flex-direction: column
+                gap: 3px
+                p:nth-child(1)
+                    font-weight: 600
+                p:nth-child(2)
+                    display: flex
+                    align-items: center
+                    gap: 5px
+                    font-size: small
+
+.similar
+    display: grid
+    gap: 25px
+    &-item
+        cursor: pointer
+        position: relative
+        background-size: cover
+        background-position: center
+        border-radius: 10px
+
+//user profile
+
+.userpage
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: 50px
+    &-heading
+        padding: 0px 75px
+        transform: translateY(190px)
+        width: 100%
+        display: flex
+        gap: 25px
+        align-items: center
+        justify-content: space-between
+        &__name
+            display: flex
+            align-items: center
+            .icon
+                background-position: center
+                background-size: cover
+                z-index: 100
+                width: 125px
+                height: 125px
+                border-radius: 50%
+                border: 8px solid $white
+            .text
+                // text-shadow: 2px 2px 0 $white, -2px 2px 0 $white, -2px -2px 0 $white, 2px -px 0 $white
+                display: flex
+                flex-direction: column
+                gap: 5px
+                padding: 30px
+                padding-left: 150px
+                transform: translateX(-125px)
+                background-color: $white
+                border-radius: 100px
+                &-name
+                    display: flex
+                    gap: 15px
+                    align-items: center
+                    font-size: 28pt
+                    font-weight: 700
+                    i
+                        font-size: 20pt
+                        &.bxs-shapes
+                            color: $accent
+                        &.bxs-crown.Bronze
+                            color: $bronze
+                        &.bxs-crown.Silver
+                            color: $silver
+                        &.bxs-crown.Gold
+                            color: $gold
+                        &.bxs-crown.Platinum
+                            color: $platinum
+                &-login
+                    opacity: 0.5
+                    transform: translateX(2px)
+    .edit
+        background-color: rgba(0, 0, 0, .05)
+        padding: 6px 15px
+        border-radius: 5px
+        font-weight: 600
+        color: rgba(0, 0, 0, .45)
+        i
+            font-size: 9pt
+    &-main
+        padding: 0px 75px
+        transform: translateY(190px)
+        display: flex
+        gap: 50px
+        flex-direction: column
+        &__tabs
+            display: flex
+            gap: 15px
+            .tab
+                padding: 10px 20px
+                border-radius: 50px
+                font-weight: 600
+                &.active
+                    background-color: $accent
+        &__recentfav
+            display: flex
+            flex-direction: column
+            gap: 35px
+            .recentfav
+                display: grid
+                grid-template-columns: repeat(4, 1fr)
+                gap: 25px
+                p
+                    opacity: .5
+                    border-radius: 10px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    height: 215px
+                    grid-column: 1 / 5
+                h2
+                    grid-column: 1 / 5
+                    margin-bottom: 10px !important
+                &-item
+                    background-position: center
+                    background-size: cover
+                    height: 215px
+                    width: 100%
+                    border-radius: 10px
+                    transition: .2s
+                    &:hover
+                        transform: scale(1.025)
+        &__progress
+            display: flex
+            flex-direction: column
+            gap: 25px
+            .level
+                display: flex
+                flex-direction: column
+                gap: 25px
+                &-status
+                    font-size: 46pt
+                    font-weight: 900
+                &-bonus
+                    transform: translateY(-15px)
+                    display: flex
+                    gap: 8px
+                    font-size: 16pt
+                    align-items: center
+                    font-weight: 600
+                    i
+                        font-size: 20pt
+                &-text
+                    ul
+                        list-style: circle
+                        display: flex
+                        flex-direction: column
+                        gap: 15px
+                        margin-left: 18px
+        &__info
+            display: flex
+            flex-direction: column
+            gap: 25px
+            .info
+                display: grid
+                grid-template-columns: 1fr 1fr
+                gap: 25px
+                &-column
+                    &__field
+                        display: flex
+                        flex-direction: column
+                        gap: 10px
+        &__delete
+            display: flex
+            justify-content: flex-end
+            button
+                padding: 10px 25px
+                border-radius: 5px
+                border: 1.5px solid $warning
+                font-weight: 600
+                color: $warning
+                transition: .2s
+                &:hover
+                    color: $white
+                    background-color: $warning
+
+// product page
+
+.productlist
+    display: grid
+    margin-bottom: 50px
+    &-item
+        display: flex
+        flex-direction: column
+        gap: 15px
+        .image
+            background-size: cover
+            background-position: center
+            position: relative
+            border-radius: 10px
+            width: 100%
+            background-color: blue
+            height: 250px
+        .content
+            display: flex
+            flex-direction: column
+            gap: 5px
+            .productname
+                font-weight: 700
+                font-size: larger
+            .rating
+                margin-bottom: 10px
+                font-size: 10pt
+            .price
+                gap: 10px
+                font-size: 14pt
+                &-old
+                    font-size: 12pt
+                    font-weight: 400
+
+// sign in --- sign up
+main:has(.signform)
+    display: grid
+    grid-template-columns: repeat(1, 750px 1fr)
+    .signform
+        padding: 50px 150px
+        display: flex
+        min-width: 100%
+        height: 100%
+        justify-content: center
+        flex-direction: column
+        gap: 50px
+        box-shadow: 0 0 75px 0 rgba(0, 0, 0, .065)
+        h1
+            font-size: 26pt
+        form
+            display: flex
+            flex-direction: column
+            gap: 15px
+            .message
+                display: flex
+                flex-direction: column
+                gap: 10px
+                padding-left: 20px
+                list-style: '✘  '
+                font-weight: 600
+                color: $warning
+            .input-row
+                display: flex
+                gap: 15px
+                flex-direction: row
+                span
+            input[type=text], input[type=password], input[type=email]
+                font-size: 12pt
+                padding: 20px 30px
+                width: 100%
+            input[type=file]
+                background: none
+                padding: 0
+                width: 100%
+                opacity: 0
+            button
+                width: 100%
+            div
+                display: flex
+                flex-direction: column
+                align-items: center
+                gap: 15px
+                margin-top: 25px
+                a
+                    color: $black
+                    text-decoration: underline
+                    font-size: 12pt
+                    font-weight: 400
+                    padding: 0
+    .signimage
+        display: block
+        background-image: url(https://i.pinimg.com/564x/8b/2f/6f/8b2f6fdd937c406cc0d276bfd1268e11.jpg)
+        width: 100%
+        height: 100vh
+        opacity: .05
+
+@for $i from 1 through 10
+    .preview:nth-child(#{$i})
+        background-color: hsl($i * 50, 30%, 80%)
